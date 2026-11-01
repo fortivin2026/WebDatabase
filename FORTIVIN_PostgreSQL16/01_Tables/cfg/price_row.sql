@@ -1,0 +1,26 @@
+-- One row of the price-setup workbook inside a batch, in paise and basis points, with the errors found by validation.
+CREATE TABLE "cfg"."price_row" (
+    "row_id" uuid NOT NULL DEFAULT gen_random_uuid(),
+    "batch_id" uuid NOT NULL,
+    "org_id" uuid NOT NULL,
+    "row_no" integer NOT NULL,
+    "sheet" text NOT NULL,
+    "service_code" text,
+    "operation_code" text,
+    "vendor_code" text,
+    "operator" text,
+    "slab_from" bigint,
+    "slab_to" bigint,
+    "buy_type" text,
+    "buy_value" bigint,
+    "l1_type" text,
+    "l1_value" bigint,
+    "l2_type" text,
+    "l2_value" bigint,
+    "cust_type" text,
+    "cust_value" bigint,
+    "effective_from" timestamp with time zone,
+    "row_status" text,
+    "test_amount" bigint,
+    "errors" text[] NOT NULL DEFAULT '{}'::text[]
+);

@@ -1,0 +1,1 @@
+ALTER TABLE "cfg"."vendor_pricing" ADD CONSTRAINT "vendor_pricing_config_version_id_vendor_id_operation_id_in_excl" EXCLUDE USING gist (config_version_id WITH =, vendor_id WITH =, operation_id WITH =, int8range(COALESCE(min_amount_paise, (0)::bigint), COALESCE(max_amount_paise, '9223372036854775806'::bigint), '[]'::text) WITH &&);

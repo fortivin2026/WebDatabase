@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX IF NOT EXISTS "uq_active_binding" ON "iam"."device_binding" USING btree (user_id) WHERE (status = ANY (ARRAY['ACTIVE'::text, 'COOLING_OFF'::text])) WHERE (status = ANY (ARRAY['ACTIVE'::text, 'COOLING_OFF'::text]));

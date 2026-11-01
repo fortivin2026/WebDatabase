@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS "transaction_status_created_at_idx" ON "txn"."transaction" USING btree (status, created_at) WHERE (status = ANY (ARRAY['PENDING'::text, 'UNKNOWN'::text, 'CORE_UNKNOWN'::text, 'SENT'::text])) WHERE (status = ANY (ARRAY['PENDING'::text, 'UNKNOWN'::text, 'CORE_UNKNOWN'::text, 'SENT'::text]));

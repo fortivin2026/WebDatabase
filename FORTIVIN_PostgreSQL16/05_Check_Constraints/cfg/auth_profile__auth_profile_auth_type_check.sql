@@ -1,0 +1,1 @@
+ALTER TABLE "cfg"."auth_profile" ADD CONSTRAINT "auth_profile_auth_type_check" CHECK ((auth_type = ANY (ARRAY['NONE'::text, 'API_KEY'::text, 'BASIC'::text, 'BEARER'::text, 'OAUTH2_CLIENT'::text, 'HMAC'::text, 'MTLS'::text])));

@@ -1,0 +1,1 @@
+ALTER TABLE "audit"."login_event" ADD CONSTRAINT "login_event_event_check" CHECK ((event = ANY (ARRAY['LOGIN_OK'::text, 'LOGIN_FAIL'::text, 'LOGOUT'::text, 'MFA_FAIL'::text, 'LOCKED'::text, 'DEVICE_BIND'::text, 'DEVICE_REVOKE'::text, 'INTEGRITY_FAIL'::text])));

@@ -1,0 +1,1 @@
+ALTER TABLE "txn"."transaction" ADD CONSTRAINT "transaction_status_check" CHECK ((status = ANY (ARRAY['INITIATED'::text, 'VALIDATED'::text, 'CORE_HELD'::text, 'CORE_UNKNOWN'::text, 'ROUTED'::text, 'SENT'::text, 'PENDING'::text, 'UNKNOWN'::text, 'SUCCESS'::text, 'FAILED'::text, 'REVERSED'::text])));

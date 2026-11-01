@@ -1,0 +1,1 @@
+ALTER TABLE "wallet"."wallet_limits" ADD CONSTRAINT "wallet_limits_limit_type_check" CHECK ((limit_type = ANY (ARRAY['PER_TXN'::text, 'DAILY_AMOUNT'::text, 'DAILY_COUNT'::text, 'MONTHLY_AMOUNT'::text, 'MONTHLY_COUNT'::text])));

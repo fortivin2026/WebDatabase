@@ -1,0 +1,1 @@
+ALTER TABLE "wallet"."wallet_limits" ADD CONSTRAINT "wallet_limits_org_id_subject_type_subject_id_service_id_lim_key" UNIQUE NULLS NOT DISTINCT (org_id, subject_type, subject_id, service_id, limit_type);

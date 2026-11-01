@@ -1,0 +1,1 @@
+ALTER TABLE "dmt"."customer_txn_limit_config" ADD CONSTRAINT "customer_txn_limit_config_limit_type_check" CHECK ((limit_type = ANY (ARRAY['PER_TXN'::text, 'DAILY'::text, 'MONTHLY'::text, 'DAILY_COUNT'::text, 'MONTHLY_COUNT'::text])));

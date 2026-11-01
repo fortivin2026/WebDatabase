@@ -1,0 +1,1 @@
+ALTER TABLE "wf"."approval_request" ADD CONSTRAINT "approval_request_status_check" CHECK ((status = ANY (ARRAY['PENDING'::text, 'APPROVED'::text, 'REJECTED'::text, 'EXPIRED'::text, 'CANCELLED'::text])));

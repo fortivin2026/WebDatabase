@@ -1,0 +1,27 @@
+-- One wallet per user and wallet type with balances, limits and overdraft settings.
+CREATE TABLE "wallet"."wallets" (
+    "wallet_id" uuid NOT NULL DEFAULT gen_random_uuid(),
+    "org_id" uuid NOT NULL,
+    "user_id" uuid,
+    "parent_wallet_id" uuid,
+    "parent_user_id" uuid,
+    "user_level_id" uuid,
+    "wallet_type" text NOT NULL,
+    "currency" character(3) NOT NULL DEFAULT 'INR'::bpchar,
+    "available_balance" bigint NOT NULL DEFAULT 0,
+    "hold_balance" bigint NOT NULL DEFAULT 0,
+    "block_balance" bigint NOT NULL DEFAULT 0,
+    "ledger_balance" bigint NOT NULL DEFAULT 0,
+    "total_credit" bigint NOT NULL DEFAULT 0,
+    "total_debit" bigint NOT NULL DEFAULT 0,
+    "min_balance" bigint NOT NULL DEFAULT 0,
+    "overdraft_allowed" boolean NOT NULL DEFAULT false,
+    "overdraft_limit" bigint NOT NULL DEFAULT 0,
+    "wallet_cap" bigint,
+    "low_balance_alert" bigint,
+    "status" text NOT NULL,
+    "version" bigint NOT NULL DEFAULT 0,
+    "created_by" uuid NOT NULL,
+    "created_at" timestamp with time zone NOT NULL DEFAULT now(),
+    "updated_at" timestamp with time zone NOT NULL DEFAULT now()
+);

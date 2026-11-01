@@ -1,0 +1,1 @@
+ALTER TABLE "wallet"."wallet_transactions" ADD CONSTRAINT "wallet_transactions_status_check" CHECK ((status = ANY (ARRAY['PENDING'::text, 'PENDING_APPROVAL'::text, 'SUCCESS'::text, 'FAILED'::text, 'REVERSED'::text])));

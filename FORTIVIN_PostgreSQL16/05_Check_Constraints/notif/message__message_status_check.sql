@@ -1,0 +1,1 @@
+ALTER TABLE "notif"."message" ADD CONSTRAINT "message_status_check" CHECK ((status = ANY (ARRAY['QUEUED'::text, 'SENT'::text, 'DELIVERED'::text, 'READ'::text, 'FAILED'::text, 'BLOCKED'::text, 'DEAD'::text])));
