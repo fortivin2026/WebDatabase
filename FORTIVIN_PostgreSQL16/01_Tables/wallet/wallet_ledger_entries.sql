@@ -1,0 +1,26 @@
+-- Immutable double-entry ledger lines with opening and closing balances.
+CREATE TABLE "wallet"."wallet_ledger_entries" (
+    "ledger_id" bigint NOT NULL DEFAULT generated: identity,
+    "created_at" timestamp with time zone NOT NULL DEFAULT now(),
+    "journal_id" uuid NOT NULL,
+    "wallet_txn_id" uuid NOT NULL,
+    "parent_txn_id" uuid,
+    "org_id" uuid NOT NULL,
+    "account_id" uuid NOT NULL,
+    "wallet_id" uuid,
+    "user_id" uuid,
+    "txn_type" text NOT NULL,
+    "debit_amount" bigint NOT NULL DEFAULT 0,
+    "credit_amount" bigint NOT NULL DEFAULT 0,
+    "opening_balance" bigint NOT NULL,
+    "closing_balance" bigint NOT NULL,
+    "available_balance" bigint,
+    "hold_balance" bigint,
+    "related_wallet_id" uuid,
+    "related_user_id" uuid,
+    "service_id" integer,
+    "vendor_id" integer,
+    "narration" text NOT NULL,
+    "status" text NOT NULL DEFAULT 'POSTED'::text,
+    "created_by" uuid NOT NULL
+) PARTITION BY RANGE (created_at);

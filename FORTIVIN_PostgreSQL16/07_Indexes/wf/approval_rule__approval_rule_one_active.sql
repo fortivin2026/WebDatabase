@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX IF NOT EXISTS "approval_rule_one_active" ON "wf"."approval_rule" USING btree (org_id, module, action, service_id, min_amount_paise, max_amount_paise, initiator_role_id, initiator_level_id);

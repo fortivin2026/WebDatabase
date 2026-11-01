@@ -1,0 +1,7 @@
+-- Parent: vendor.wallet_ledger
+-- Number of partitions: 4
+-- First: wallet_ledger_y2026m10
+-- Last: wallet_ledger_y2027m01
+
+-- Monthly RANGE(created_at). Add more with ops.ensure_partitions(n) (0–36 months ahead); ops.create_month_partition for one month. Rows outside every partition are rejected — schedule it monthly.
+-- Exact partition boundaries are not provided; create after verifying ranges and before loading data.

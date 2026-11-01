@@ -1,0 +1,1 @@
+ALTER TABLE "recon"."recon_run" ADD CONSTRAINT "recon_run_recon_type_check" CHECK ((recon_type = ANY (ARRAY['WALLET_CHAIN'::text, 'ORG_VENDOR_WALLET'::text, 'VENDOR_AGENT_TXN'::text, 'BANK_STATEMENT'::text])));

@@ -1,0 +1,1 @@
+ALTER TABLE "dmt"."remittance_leg" ADD CONSTRAINT "remittance_leg_status_check" CHECK ((status = ANY (ARRAY['CREATED'::text, 'SENT'::text, 'SUCCESS'::text, 'FAILED'::text, 'CANCELLED'::text, 'REVERSED'::text])));

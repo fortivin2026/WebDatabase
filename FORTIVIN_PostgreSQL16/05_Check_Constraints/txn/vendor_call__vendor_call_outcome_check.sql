@@ -1,0 +1,1 @@
+ALTER TABLE "txn"."vendor_call" ADD CONSTRAINT "vendor_call_outcome_check" CHECK ((outcome = ANY (ARRAY['SUCCESS'::text, 'FAILED'::text, 'PENDING'::text, 'UNKNOWN'::text, 'TIMEOUT'::text, 'CIRCUIT_OPEN'::text])));

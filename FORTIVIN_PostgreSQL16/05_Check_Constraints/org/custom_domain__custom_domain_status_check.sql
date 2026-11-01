@@ -1,0 +1,1 @@
+ALTER TABLE "org"."custom_domain" ADD CONSTRAINT "custom_domain_status_check" CHECK ((status = ANY (ARRAY['PENDING_VERIFICATION'::text, 'VERIFIED'::text, 'ACTIVE'::text, 'FAILED'::text, 'SUSPENDED'::text])));

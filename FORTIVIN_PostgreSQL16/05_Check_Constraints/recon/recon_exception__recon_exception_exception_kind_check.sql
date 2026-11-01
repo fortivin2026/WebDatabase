@@ -1,0 +1,1 @@
+ALTER TABLE "recon"."recon_exception" ADD CONSTRAINT "recon_exception_exception_kind_check" CHECK ((exception_kind = ANY (ARRAY['MISSING_IN_A'::text, 'MISSING_IN_B'::text, 'AMOUNT_MISMATCH'::text])));
